@@ -17,6 +17,20 @@ public class TextAnimation {
             "white", "\033[97m"
     );
 
+    public static void animateText(String text) {
+
+        for (int i = 0; i < text.length(); i++) {
+            System.out.print(text.charAt(i) + RESET_COLOR);
+            try {
+                Thread.sleep(DEFAULT_DELAY);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Animation interrupted: " + e.getMessage());
+            }
+        }
+        System.out.println();
+    }
+
     public static void animateText(String text, int delay, String color) {
 
         for (int i = 0; i < text.length(); i++) {

@@ -3,7 +3,7 @@ package src.Helper;
 import java.io.IOException;
 
 public class Pauser {
-    public void enter(){
+    public static void enter(){
         try {
             System.in.read();
             } catch (IOException e) {
