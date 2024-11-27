@@ -11,4 +11,15 @@ public class Pauser {
                 e.printStackTrace();
         }
     };
+
+    public static void enter(Boolean message){
+        try {
+            if(message){
+                System.out.print("Press enter to continue");
+            }
+            System.in.read();
+            } catch (IOException e) {
+                e.printStackTrace();
+        }
+    }
 }
