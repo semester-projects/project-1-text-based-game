@@ -14,16 +14,16 @@ public class OutSet {
     public static String NAME;
     public void initialize(){
         clearScreen();
-        animateText("Enter your Name: ", false);
-        NAME = input("s");
-        clearScreen();
-        greet(NAME);
-        System.out.print("Do you wanna know about the characters in the game. It will be helpful if u are playing it for the first time(Enter 'y' for yes): ");
-        String choice = input("s");
-        if(choice.equals("y")){
-            InfoChar infoChar = new InfoChar();
-            infoChar.infoChar();
-        }
+        // animateText("Enter your Name: ", false);
+        // NAME = input("s");
+        // clearScreen();
+        // greet(NAME);
+        // System.out.print("Do you wanna know about the characters in the game. It will be helpful if u are playing it for the first time(Enter 'y' for yes): ");
+        // String choice = input("s");
+        // if(choice.equals("y")){
+        //     InfoChar infoChar = new InfoChar();
+        //     infoChar.infoChar();
+        // }
         // printPreStory();
         printChapter1();
     }

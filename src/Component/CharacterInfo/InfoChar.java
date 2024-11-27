@@ -31,7 +31,7 @@ public class InfoChar {
         """;
         animateText(info, 50, null);
         addLines(1);
-        enter();
+        enter(true);
     }
 
     public void williamAshworth(){
@@ -44,7 +44,7 @@ public class InfoChar {
         """;
         animateText(info, 50, null);
         addLines(1);
-        enter();
+        enter(true);
     }
 
     public void josephWorthington(){
@@ -55,7 +55,7 @@ public class InfoChar {
         """;
         animateText(info, 50, null);
         addLines(1);
-        enter();
+        enter(true);
     }
 
     public void anneWhitlock(){
@@ -66,7 +66,7 @@ public class InfoChar {
         """;
         animateText(info, 50, null);
         addLines(1);
-        enter();
+        enter(true);
     }
 
     public void billyCarroway(){
@@ -77,7 +77,7 @@ public class InfoChar {
         """;
         animateText(info, 50, null);
         addLines(1);
-        enter();
+        enter(true);
     }
 
     public void josephAbbott(){
@@ -88,7 +88,7 @@ public class InfoChar {
         """;
         animateText(info, 50, null);
         addLines(1);
-        enter();
+        enter(true);
     }
 
     public void colonelEdwardBlackThrone(){
@@ -98,7 +98,7 @@ public class InfoChar {
         """;
         animateText(info, 50, null);
         addLines(1);
-        enter();
+        enter(true);
     }
 
     public void kinseyMillhone(){
@@ -108,6 +108,6 @@ public class InfoChar {
         """;
         animateText(info, 50, null);
         addLines(1);
-        enter();
+        enter(true);
     }
 }
