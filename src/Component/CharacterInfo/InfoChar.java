@@ -3,7 +3,7 @@ package src.Component.CharacterInfo;
 import static src.Helper.TextAnimation.animateText;
 import static src.Helper.Cleaner.clearScreen;
 import static src.Helper.Pauser.enter;
-import static src.Helper.Spacer.addLines;
+import static src.Helper.Line.addLines;
 
 public class InfoChar {
 

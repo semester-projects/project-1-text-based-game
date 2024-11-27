@@ -3,7 +3,7 @@ package src.Engine.Start;
 import static src.Helper.TextAnimation.animateText;
 
 import src.Component.CharacterInfo.InfoChar;
-import src.Component.Chp1.Chapter1;
+import static src.Component.Chp1.Chapter1.printChapter1;
 import static src.Component.PreStory.PreStory.printPreStory;
 
 import static src.Helper.Cleaner.clearScreen;
@@ -24,8 +24,7 @@ public class OutSet {
             InfoChar infoChar = new InfoChar();
             infoChar.infoChar();
         }
-        printPreStory();
-        Chapter1 chapter1 = new Chapter1();
-        chapter1.printChapter1();
+        // printPreStory();
+        printChapter1();
     }
 }

@@ -78,6 +78,5 @@ public class PreStory {
     But with each step closer to the truth, the darkness around the village grows thicker.
     """, true);
         enter();
-    }
-    
+    }   
 }

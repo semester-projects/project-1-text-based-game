@@ -14,7 +14,8 @@ public class TextAnimation {
             "yellow", "\033[93m",
             "magenta", "\033[95m",
             "cyan", "\033[96m",
-            "white", "\033[97m"
+            "white", "\033[97m",
+            "black", "\033[90m"
     );
 
     public static void animateText(String text) {
@@ -119,6 +120,15 @@ public class TextAnimation {
     }
 
 
+    public static void animateDialogue(String CharName, String state, String dialogue, String color){
+        if(state != null){
+            animateText(CharName, color, false, true);
+            animateText(state + ": ", color);
+        }else{
+            animateText(CharName + " : ", color, false, true);
+        }
+        animateText(dialogue);
+    }
     public static String getColor(String color){
         if (color == null || color.isEmpty()) {
             return RESET_COLOR;
