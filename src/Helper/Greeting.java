@@ -7,11 +7,11 @@ import static src.Helper.Spacer.addLines;
 
 public class Greeting {
     public static void greet(String name) {
-        animateText(("Hello , " + name + "!"), 150,  "green", false, true);
-        animateText("Welcome to the game!", 150, "green", false, true);
+        animateText(("Hello , " + name + "!"), 50,  "green", false, true);
+        animateText("Welcome to the game!", 50, "green", false, true);
         addLines(2);
         String title = "\t\tThe Tace of Absence";
-        animateText(title, 150, "blue", false, true);
+        animateText(title, 50, "blue", false, true);
         enter();
         clearScreen();
     }
