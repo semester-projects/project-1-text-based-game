@@ -31,6 +31,22 @@ public class TextAnimation {
         System.out.println();
     }
 
+    public static void animateText(String text, boolean newLine) {
+
+        for (int i = 0; i < text.length(); i++) {
+            System.out.print(text.charAt(i) + RESET_COLOR);
+            try {
+                Thread.sleep(DEFAULT_DELAY);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Animation interrupted: " + e.getMessage());
+            }
+        }
+        if(newLine){
+            System.out.println();
+        }
+    }
+
     public static void animateText(String text, int delay, String color) {
 
         for (int i = 0; i < text.length(); i++) {
