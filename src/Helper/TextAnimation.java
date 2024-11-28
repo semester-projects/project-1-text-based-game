@@ -3,7 +3,7 @@ package src.Helper;
 import java.util.Map;
 
 public class TextAnimation {
-    private static final int DEFAULT_DELAY = 50;
+    private static final int DEFAULT_DELAY = 1;
     private static final String RESET_COLOR = "\033[0m";
     private static final String BOLD_COLOR = "\033[1m";
     private static final String ITALIC_STRING = "\u001B[3m";
@@ -15,7 +15,8 @@ public class TextAnimation {
             "magenta", "\033[95m",
             "cyan", "\033[96m",
             "white", "\033[97m",
-            "black", "\033[90m"
+            "black", "\033[90m",
+            "gray", "\033[90m"
     );
 
     public static void animateText(String text) {
@@ -120,7 +121,7 @@ public class TextAnimation {
     }
 
 
-    public static void animateDialogue(String CharName, String state, String dialogue, String color){
+    public static void animateDialogue(String CharName, String state, String color, String dialogue){
         if(state != null){
             animateText(CharName, color, false, true);
             animateText(state + ": ", color);

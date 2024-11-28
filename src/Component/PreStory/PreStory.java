@@ -29,7 +29,7 @@ public class PreStory {
     I've been trying to get to the bottom of it, but it's like they're hiding something from me.
     """;
         animateText(s1);
-        enter(false);
+        enter();
     
         animateText("Anonymous (A Whispering Voice): ", false, "red");
         String s2 = """
@@ -38,7 +38,7 @@ public class PreStory {
     matter of time before they strike again.
     """;
         animateText(s2);
-        enter(false);
+        enter();
     
         animateText("Moments Later...", true);
         enter();
@@ -49,7 +49,7 @@ public class PreStory {
     The flickering candlelight casts eerie shadows on the walls.
     """;
         animateText(s3);
-        enter(false);
+        enter();
     
         String s4 = """
     A voice emerges from the darkness, calm yet sinister:

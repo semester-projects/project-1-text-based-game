@@ -1,8 +1,13 @@
-import src.Engine.Start.OutSet;
+import java.util.ArrayList;
+
+import src.Engine.Middle.Midst;
+
+
 
 public class Main {
     public static void main(String[] args) {
-        OutSet outSet = new OutSet();
-        outSet.initialize();
+        ArrayList<String> Info = new ArrayList<>();
+        Midst m = new Midst();
+        m.initialize(Info);
     }
 }
