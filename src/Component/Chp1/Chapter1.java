@@ -43,21 +43,22 @@ public class Chapter1 {
             }
             animateText("Choose Your action from above: ", false, "cyan");
             int user_input = input(1);
-            switch(user_input){
-                case 1:
-                    visitColonel();
-                    break;
-                case 2:
-                    visitCrimeScene();
-                    break;
-                case 3:
-                    goToOffice();
-                    break;
-                default:
-                animateText("Invalid choice, please choose again.");
+            addLines(1);
+            if(user_input == 1){
+                visitColonel();
             }
+            else if(user_input == 2 && pointer != 3){
+                visitCrimeScene();
+            }
+            else if(user_input == 3 &&  pointer != 3){
+                goToOffice();
+            }
+            else{
+                animateText("Invalid Input! Please choose again");
+            }
+            addLines(1);
         }
-
+        addLines(3);
         enter("Press Enter for the Next Chapter");
     }
 
@@ -125,7 +126,7 @@ public class Chapter1 {
             Info.add("a cufflink from the Colonel's collection");
             pointer++;
         }
-        
+
         if(COLONEL_COUNT > 1){
             animateText("There is no one in the office. The office is locked.", "black", false, true);
             return;
@@ -137,7 +138,7 @@ public class Chapter1 {
            return;
         }
 
-        animateText("INT. HALLWAY - OUTSIDE SHEPARD'S OFFICE", "black", false, true);
+        animateText("INT. HALLWAY - OUTSIDE SHEPARD'S OFFICE" + dayStrings[pointer], "black", false, true);
         animateText("COLONEL EDWARD BLACKTHORNE (early 40s, tall and broad-shouldered, with an air of authority) strides in. He wears a military uniform with impeccable precision. His face is a mask of professionalism, though his eyes betray a hint of impatience.", null, false, true);
         enter();
 
@@ -186,7 +187,7 @@ public class Chapter1 {
             CRIME_SCENE_COUNT++;
             return;
         }
-        animateText("INT. WORTHINGTON'S QUARTERS - LATER", null, false, true);
+        animateText("INT. WORTHINGTON'S QUARTERS - "  + dayStrings[pointer], null, false, true);
         animateText("The camera pans over the luxurious quarters, but the scene is starkly different now. The space is a mess, with items scattered around in disarray. The body of JOSEPH WORTHINGTON, the senior military officer, is found slumped at his desk. His face is pale, eyes wide in shock, and a bloodstained note is beside him. The note reads: 'The truth is always closer than you think.'", null, false, true);
         enter();
         
@@ -227,11 +228,11 @@ public class Chapter1 {
     }
 
     public void goToOffice(){
-        if(OFFICE_COUNT > 1){
+        if(OFFICE_COUNT >= 1){
             animateText("I need to crack this mystery in 48 hours.");
             return;
         }
-        animateText("INT. SHEPARD'S OFFICE - NIGHT", null, false, true);
+        animateText("INT. SHEPARD'S OFFICE - " + dayStrings[pointer], null, false, true);
         animateText("The clock shows it's nearing midnight. The office is quiet once again, the only sound the ticking of the clock. Shepard is hunched over more papers, his face illuminated by the faint light of an oil lamp. William stands by the window, gazing out into the darkness.", null, false, true);
         enter();
         
