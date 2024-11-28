@@ -128,8 +128,12 @@ public class TextAnimation {
         }else{
             animateText(CharName + " : ", color, false, true);
         }
-        animateText(dialogue);
+
+        if(dialogue != null){
+            animateText(dialogue);
+        }
     }
+
     public static String getColor(String color){
         if (color == null || color.isEmpty()) {
             return RESET_COLOR;
