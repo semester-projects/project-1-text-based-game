@@ -7,17 +7,15 @@
 ## 🕹️ **How to Play**(yet to decided)
 
 1. **Run the Game**: 
-   - Open your terminal and navigate to the directory where the game files are located.
-   - Compile and run the Java program:
+   - Open your terminal and navigate to the directory dist.
+   -Run the following command:
      ```bash
-     javac DetectiveGame.java
-     java DetectiveGame
+     java -jar <Path>/dist/<Dist_name>.jar
      ```
-
+     You can also compile it your self.
+     
 2. **Interact with the Story**:
    - Read through the story and clues revealed through text animations.
-   - Make critical decisions by typing the number or letter corresponding to your choice when prompted.
-   - Each decision influences the course of the investigation and the relationships with characters.
 
 3. **Solve the Mystery**:
    - Investigate suspects, uncover hidden clues, and navigate tense situations.
