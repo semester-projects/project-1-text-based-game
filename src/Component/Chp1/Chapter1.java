@@ -29,10 +29,10 @@ public class Chapter1 {
         You can see the info u get from the people in the case file any time by entering "i" after someone chat.
         To quit enter q.
         """, "black", false, true);
-        Chapter1DecisionEngine();
+        chapter1DecisionEngine();
     }
 
-    public void Chapter1DecisionEngine(){
+    public void chapter1DecisionEngine(){
         while(pointer < dayStrings.length){
             if(dayStrings[pointer] == "Next Day"){
                 animateText("1. Visit Colonel");
