@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
-import src.Engine.Middle.Midst;
+import src.Engine.End.End;
 
 
 
 public class Main {
     public static void main(String[] args) {
         ArrayList<String> Info = new ArrayList<>();
-        Midst m = new Midst();
-        m.initialize(Info);
+        End end = new End();
+        end.initialize(Info);
     }
 }

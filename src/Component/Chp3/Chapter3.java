@@ -1,6 +1,7 @@
 package src.Component.Chp3;
 
 import static src.Helper.Cleaner.clearScreen;
+import static src.Helper.Line.addHorizontalLine;
 import static src.Helper.Line.addLines;
 import static src.Helper.Pauser.enter;
 import static src.Helper.TextAnimation.animateDialogue;
@@ -26,14 +27,15 @@ public class Chapter3 {
             q = quit
             """, "black", false, true);
         chapter3Start();
-
+        chapter3DecisionEngine();
+        enter("Press Enter to continue to the next chapter");
     }
 
     public void chapter3DecisionEngine(){
         while(pointer < 3){
-            animateText("Visit the Office");
-            animateText("Visit the Military Base");
-            animateText("Visit the Interrogation Room");
+            animateText("1. Visit the Office");
+            animateText("2. Visit the Military Base");
+            animateText("3. Visit the Interrogation Room");
 
             animateText("Choose Your action from above: ", false, "cyan");
             int user_input = input(1);
@@ -53,17 +55,20 @@ public class Chapter3 {
                     animateText("Invalid Input! Please choose again");
                     break;
             }
+            addLines(1);
         }
+        worthingtonQuatres();
     }
 
     public void chapter3Start(){
         clearScreen();
         animateText("\t\tChapter 3", "cyan");
         addLines(2);
-        String quote = "\t\"Why live?\"";
+        String quote = "\t\t\"Why live?\"";
         animateText(quote, "red", true, true);
         enter();
 
+        addHorizontalLine(20);
         animateText("INT. WORTHINGTON'S QUARTERS - DAY", "black", false, true);
         enter();
         
@@ -78,7 +83,8 @@ public class Chapter3 {
         
         animateText("The body of Lieutenant Colonel Arnold Preston, now promoted to Joseph's position, was discovered slumped in the chair, a bullet wound in his chest.", null, false, true);
         enter();
-        
+        addHorizontalLine(20);
+
         addLines(2);
     }
 
@@ -88,7 +94,9 @@ public class Chapter3 {
             animateText("T have got all the stuff");
             return;
         }
-        animateText("INT. SHEPARD'S OFFICE - MOMENTS LATER", null, false, true);
+        addHorizontalLine(20);
+
+        animateText("INT. SHEPARD'S OFFICE - MOMENTS LATER", "black", false, true);
         enter();
         
         animateText("Shepard sat at his desk, eyes focused on the file in front of him, but his mind was elsewhere. William's sudden promotion to Joseph's rank left too many questions. Why had he been chosen for such a swift rise? It could've been out of respect for his capabilities, or it could have been part of a larger, more sinister plan.", null, false, true);
@@ -138,6 +146,7 @@ public class Chapter3 {
         
         animateDialogue("SHEPARD", "(softly)", "green", "I think you're too close to this, William. Too close to everything that's happened.");
         enter();
+        addHorizontalLine(20);
 
         OFFICE++;
         pointer++;
@@ -148,7 +157,9 @@ public class Chapter3 {
             animateText("Nothing new to see there");
             return;
         }
-        animateText("INT. MILITARY BASE - DAY", null, false, true);
+        addHorizontalLine(20);
+
+        animateText("INT. MILITARY BASE - DAY", "black", false, true);
         enter();
         
         animateText("The crime scene was a mess of tension, and it was clear that everyone was on edge. Shepard and William entered the room where Preston's body had been found, a pool of dark blood now staining the polished wooden floor. The military personnel had already secured the area, but it was still chaotic. Another death, and this one was tied to the same rank, the same circle of power.", null, false, true);
@@ -169,6 +180,8 @@ public class Chapter3 {
         animateText("Shepard nodded, then walked over to the desk where Preston had been found. There was a letter—another cryptic note. He picked it up, studying the handwriting. It wasn't much different from the note found beside Joseph's body. The same sharp, careful script.", null, false, true);
         enter();  
         
+        addHorizontalLine(20);
+
         MILITARY_BASE++;
         pointer++;
     }
@@ -178,7 +191,9 @@ public class Chapter3 {
             animateText("Already interrogated Billy!");
             return;
         }
-        animateText("INT. INTERROGATION ROOM - LATER THAT DAY", null, false, true);
+
+        addHorizontalLine(20);
+        animateText("INT. INTERROGATION ROOM - LATER THAT DAY", "black", false, true);
         enter();
         
         animateText("The questioning of the suspects was intense, and though Shepard's instincts told him to focus on William, he couldn't ignore the connection between him and the newly appointed position. But Billy, too, seemed more on edge than usual, his fidgeting and inability to make eye contact making Shepard suspicious.", null, false, true);
@@ -196,13 +211,17 @@ public class Chapter3 {
         animateText("Shepard's gaze lingered on him for a moment longer than necessary before turning to Anne, who was seated quietly in the corner. She hadn't offered much useful information, but she was starting to seem more detached than she had earlier in the investigation. Was she involved? Or was she merely another player in this twisted game?", null, false, true);
         enter();  
         
+        addHorizontalLine(20);
+
         INTERROGATION_ROOM++;
         pointer++;
     }
 
 
-    public void WorthingtonQuatres(){
-        animateText("INT. WORTHINGTON'S QUARTERS - NIGHT", null, false, true);
+    public void worthingtonQuatres(){
+
+        addHorizontalLine(20);
+        animateText("INT. WORTHINGTON'S QUARTERS - NIGHT", "black", false, true);
         enter();
         
         animateText("The day had turned into night, and Shepard's mind was still racing. He couldn't shake the feeling that something was wrong—something deeper than what appeared on the surface. William's promotion, the quick succession of murders, the familiar methods, the locked rooms—nothing made sense.", null, false, true);
@@ -237,5 +256,7 @@ public class Chapter3 {
         
         animateText("As the night wore on, Shepard's suspicions deepened. He had a sense that they were all trapped in a dangerous game—a game where no one was innocent, and anyone could be the next victim.", null, false, true);
         enter(); 
+
+        addHorizontalLine(20);
     }
 }
