@@ -4,7 +4,7 @@
 
 ---
 
-## 🕹️ **How to Play**(yet to decided)
+## 🕹️ **How to Play**
 
 1. **Run the Game**: 
    - Open your terminal and navigate to the directory dist.
