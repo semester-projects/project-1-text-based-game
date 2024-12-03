@@ -53,6 +53,9 @@ some other characters...
 
 ---
 
+## 🚧 **Limitations**
+The jar file is build for the linux terminal, u need to change things up in the "TextAnimation.java" file to run perfectly on the window powershell.
+
 ## 🛑 **Warnings**
 - This game contains mature themes, including murder and psychological drama. Player discretion is advised.
 
