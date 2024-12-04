@@ -8,7 +8,6 @@ import static src.Helper.TextAnimation.animateDialogue;
 import static src.Helper.TextAnimation.animateText;
 import static src.Helper.Input.input;
 
-import java.util.ArrayList;
 
 public class Chapter3 {
     int OFFICE = 0;
@@ -16,11 +15,6 @@ public class Chapter3 {
     int INTERROGATION_ROOM = 0;
 
     int pointer = 0;
-    ArrayList<String> Info = new ArrayList<>();
-
-    public Chapter3(ArrayList<String> Info){
-        this.Info = Info;
-    }
     public void printChapter3(){
         animateText("""
             i = info u have gathered\n

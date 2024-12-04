@@ -12,4 +12,13 @@ public class Input {
     public static int input(int n) {
         return scanner.nextInt();
     }
+
+    public static int input(){
+        int in = scanner.nextInt();
+        while(in != 1 && in != 2 && in != 3){
+            System.out.println("Invalid input. Please enter the correct option.");
+            in = scanner.nextInt();
+        }
+        return in;
+    }
 }

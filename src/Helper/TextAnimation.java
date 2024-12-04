@@ -3,7 +3,7 @@ package src.Helper;
 import java.util.Map;
 
 public class TextAnimation {
-    private static final int DEFAULT_DELAY = 1;
+    private static final int DEFAULT_DELAY = 5;
     private static final String RESET_COLOR = "\033[0m";
     private static final String BOLD_COLOR = "\033[1m";
     private static final String ITALIC_STRING = "\u001B[3m";

@@ -8,14 +8,7 @@ import static src.Helper.Pauser.enter;
 import static src.Helper.TextAnimation.animateDialogue;
 import static src.Helper.TextAnimation.animateText;
 
-import java.util.ArrayList;
-
 public class Chapter4 {
-    ArrayList<String> Info = new ArrayList<>();
-
-    public Chapter4(ArrayList<String> Info) {
-        this.Info = Info;
-    }
     public void printChapter4(){
         animateText("""
             i = info u have gathered\n

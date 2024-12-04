@@ -6,7 +6,6 @@ import static src.Helper.Pauser.enter;
 import static src.Helper.TextAnimation.animateDialogue;
 import static src.Helper.TextAnimation.animateText;
 
-import java.util.ArrayList;
 
 import static src.Helper.Input.input;
 
@@ -17,12 +16,6 @@ public class Chapter2 {
     int WILLIAM = 0;
 
     int pointer = 0;
-
-    ArrayList<String> Info;
-
-    public Chapter2(ArrayList<String> Info) {
-        this.Info = Info;
-    }
     
     public void printChapter2(){
         animateText("""

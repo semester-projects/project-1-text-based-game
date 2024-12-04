@@ -9,8 +9,8 @@ public class Pauser {
             
             if(input == 'i'){
                 System.in.read();
-                System.out.println("You have entered the input 'i'.");
-                System.in.read();
+                Inventory.printInventory();
+                enter();
             }
             if(input == '\n'){
                 return;
