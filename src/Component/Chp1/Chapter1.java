@@ -94,10 +94,6 @@ public class Chapter1 {
 
         animateDialogue("SHEPARD", "(firmly)", "green", "No progress. And I don't plan to. I've been asked to investigate a murder. Not to solve it in an hour.");
         enter();
-
-        animateText("William's eyes narrow, sensing tension in the air. Before he can respond, the door swings open, and a new figure enters.", null, false, true);
-        addLines(20); 
-        enter();
     }
 
     public void visitColonel(){

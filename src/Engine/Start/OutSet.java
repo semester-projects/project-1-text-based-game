@@ -27,7 +27,7 @@ public class OutSet {
             InfoChar infoChar = new InfoChar();
             infoChar.infoChar();
         }
-        printPreStory();
+        // printPreStory();
         Chapter1 chapter1 = new Chapter1(info);
         chapter1.printChapter1();
     }
