@@ -61,6 +61,10 @@ public class Inventory {
             if (t != null) {
                 System.out.print(t + " ");
             }
+            else{
+                System.out.print("None");
+                break;
+            }
         }
         System.out.println();
 
@@ -68,6 +72,10 @@ public class Inventory {
         for (String c : inventory[1]) {
             if (c != null) {
                 System.out.print(c + " ");
+            }
+            else{
+                System.out.print("None");
+                break;
             }
         }
         System.out.println();

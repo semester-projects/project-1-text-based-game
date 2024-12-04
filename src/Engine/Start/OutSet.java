@@ -15,7 +15,7 @@ import static src.Helper.Input.input;
 
 public class OutSet {
     public static String NAME;
-    public void initialize(ArrayList<String> info){
+    public void initialize(){
         clearScreen();
         animateText("Enter your Name: ", false);
         NAME = input("s");
@@ -28,7 +28,7 @@ public class OutSet {
             infoChar.infoChar();
         }
         // printPreStory();
-        Chapter1 chapter1 = new Chapter1(info);
+        Chapter1 chapter1 = new Chapter1();
         chapter1.printChapter1();
     }
 }

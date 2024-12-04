@@ -5,20 +5,16 @@ import static src.Helper.Input.input;
 import static src.Helper.Pauser.enter;
 import static src.Helper.Line.addHorizontalLine;
 import static src.Helper.Line.addLines;
+import static src.Helper.Line.printOptionMenuLine;
 import static src.Helper.TextAnimation.animateDialogue;
 import static src.Helper.TextAnimation.animateText;
 
-import java.util.ArrayList;
 
 public class Chapter1 {
     
     public static int COLONEL_COUNT = 0;
     public static int CRIME_SCENE_COUNT = 0;
     public static int OFFICE_COUNT = 0;
-    public ArrayList<String> Info;
-    public Chapter1(ArrayList<String> info){
-        this.Info = info;
-    }
 
     String[] dayStrings = {"Morning", "Afternoon", "Evening", "Next Day"};
     int pointer = 0;
@@ -37,9 +33,9 @@ public class Chapter1 {
             if(dayStrings[pointer] == "Next Day"){
                 animateText("1. Visit Colonel");
             }else{
-                animateText("1. Visit Colonel");
-                animateText("2. Visit Crime Scene");
-                animateText("3. Visit Office");
+                animateText("1. Meet Colonel");
+                animateText("2. Visit  Crime Scene");
+                animateText("3. Go to Office");
             }
             animateText("Choose Your action from above: ", false, "cyan");
             int user_input = input(1);
@@ -122,7 +118,7 @@ public class Chapter1 {
             enter();
             
             addHorizontalLine(20);
-            Info.add("a cufflink from the Colonel's collection");
+
             pointer++;
             return;
         }
@@ -143,11 +139,24 @@ public class Chapter1 {
         animateText("COLONEL EDWARD BLACKTHORNE (early 40s, tall and broad-shouldered, with an air of authority) strides in. He wears a military uniform with impeccable precision. His face is a mask of professionalism, though his eyes betray a hint of impatience.", null, false, true);
         enter();
 
-        Info.add("damn1");
         animateDialogue("COLONEL BLACKTHORNE", "(stepping into the office)", "red", "Detective Hollis, I trust you received my message.");
         enter();
 
-        animateDialogue("SHEPARD", "(looking up, expression unreadable)", "green", "I did.");
+        printOptionMenuLine("I did", "Didn't receive it.", "No reply");
+        int user_input = input();
+
+        if(user_input == 1){
+            animateDialogue("SHEPARD", "(looking up, expression unreadable)", "green", "I did.");
+        }
+        else if(user_input == 2){
+            animateDialogue("SHEPARD", "(looking up, expression unreadable)", "green",
+            "No, I didn't. I've been busy with some stuff.");
+            addLines(1);
+            animateText("William was stunned when he listen to this.", "black");
+        }
+        else if(user_input == 3){
+            animateDialogue("SHEPARD", "(looking up, expression unreadable)", "green", "...");
+        }
         enter();
 
         animateText("William steps aside, a bit intimidated by the Colonel's presence. Shepard stands slowly, meeting the Colonel's gaze.", null, false, true);
@@ -171,7 +180,6 @@ public class Chapter1 {
         animateDialogue("SHEPARD", "(looking down at the papers)", "green", "I see.");
         enter();
 
-        Info.add("Complete the case in 48 hours");
         addHorizontalLine(20);
         COLONEL_COUNT++;
 
@@ -224,7 +232,6 @@ public class Chapter1 {
         animateDialogue("SHEPARD", "(quietly)", "green", "I don't believe in coincidences. Let's see what the others have to say.");
         enter();
         
-        Info.add("A note saying 'The truth is always closer than you think.'");
         addHorizontalLine(20);
         CRIME_SCENE_COUNT++;
 
