@@ -80,4 +80,20 @@ public class Inventory {
         }
         System.out.println();
     }
+
+    public static boolean checkInventory(String s){
+        for(int i = 0; i < inventory[0].length; i++){
+            if(s.equals(inventory[0][i])){
+                return true;
+            }
+        }
+
+        for(int i = 0; i < inventory[1].length; i++){
+            if(s.equals(inventory[1][i])){
+                return true;
+            }
+        }
+
+        return false;
+    }
 }

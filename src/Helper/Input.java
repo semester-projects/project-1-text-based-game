@@ -6,7 +6,10 @@ public class Input {
     static Scanner scanner = new Scanner(System.in);
     
     public static String input(String s) {
-        return scanner.nextLine();
+        if(scanner.hasNextLine()){
+            scanner.nextLine();
+        }
+        return scanner.nextLine().trim();
     }
 
     public static int input(int n) {
