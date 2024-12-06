@@ -6,8 +6,13 @@ public class Input {
     static Scanner scanner = new Scanner(System.in);
     
     public static String input(String s) {
-        if(scanner.hasNextLine()){
-            scanner.nextLine();
+
+        return scanner.nextLine().trim();
+    }
+
+    public static String input(String s, boolean trim){
+        if(scanner.hasNextLine() && trim){
+            scanner.nextLine().trim();
         }
         return scanner.nextLine().trim();
     }
