@@ -9,17 +9,20 @@ import static src.Helper.Line.printOptionMenuLine;
 import static src.Helper.TextAnimation.animateDialogue;
 import static src.Helper.TextAnimation.animateText;
 
+import java.util.Random;
+
+import src.Helper.Inventory;
+
 
 public class Chapter1 {
     
     public static int COLONEL_COUNT = 0;
     public static int CRIME_SCENE_COUNT = 0;
-    public static int OFFICE_COUNT = 0;
 
     String[] dayStrings = {"Morning", "Afternoon", "Evening", "Next Day"};
     int pointer = 0;
     public void printChapter1(){
-        chapter1Start();
+        // chapter1Start();
         animateText("""
         You are given the case to solve, meet and interact with people to get some clue about the killer. Your current objective get the detail of the case.
         You can see the info u get from the people in the case file any time by entering "i" after someone chat.
@@ -31,7 +34,7 @@ public class Chapter1 {
     public void chapter1DecisionEngine(){
         while(pointer < dayStrings.length){
             if(dayStrings[pointer] == "Next Day"){
-                animateText("1. Visit Colonel");
+                animateText("1. Visit Crime Scene again");
             }else{
                 animateText("1. Meet Colonel");
                 animateText("2. Visit  Crime Scene");
@@ -93,36 +96,6 @@ public class Chapter1 {
     }
 
     public void visitColonel(){
-        if(dayStrings[pointer] == "Next Day"){
-            addHorizontalLine(20);
-            animateText("INT. WORTHINGTON'S QUARTERS - THE NEXT DAY", null, false, true);
-            animateText("The investigation continues. Shepard and his team have combed through every inch of the quarters, and though there's plenty of evidence, nothing concrete points to a clear suspect. There's something more at play—something hidden beneath the surface.", null, false, true);
-            enter();
-            
-            animateText("As Shepard stands in the center of the room, his mind races through the possibilities. His brow furrows as he picks up a small, seemingly insignificant object from the floor—a discarded cufflink.", null, false, true);
-            enter();
-            
-            animateDialogue("SHEPARD", "(softly, to himself)", "green", "A cufflink... from the Colonel's collection.");
-            enter();
-            
-            animateText("The realization hits him like a wave.", null, false, true);
-            enter();
-            
-            animateDialogue("SHEPARD", "(looking up sharply)", "green", "We've been looking in the wrong places.");
-            enter();
-            
-            animateText("William, watching from the doorway, looks at Shepard, waiting for him to explain. But Shepard is already moving, determined and certain.", null, false, true);
-            enter();
-            
-            animateDialogue("SHEPARD", "(to William with a laughing face)", "green", "Time's running out. Get ready. This is about to get very interesting.");
-            enter();
-            
-            addHorizontalLine(20);
-
-            pointer++;
-            return;
-        }
-
         if(COLONEL_COUNT > 1){
             animateText("There is no one in the office. The office is locked.", "black", false, true);
             return;
@@ -187,6 +160,36 @@ public class Chapter1 {
     }  
 
     public void visitCrimeScene(){
+        if(dayStrings[pointer] == "Next Day"){
+            addHorizontalLine(20);
+            animateText("INT. WORTHINGTON'S QUARTERS - THE NEXT DAY", null, false, true);
+            animateText("The investigation continues. Shepard and his team have combed through every inch of the quarters, and though there's plenty of evidence, nothing concrete points to a clear suspect. There's something more at play—something hidden beneath the surface.", null, false, true);
+            enter();
+            
+            animateText("As Shepard stands in the center of the room, his mind races through the possibilities. His brow furrows as he picks up a small, seemingly insignificant object from the floor—a discarded cufflink.", null, false, true);
+            enter();
+            
+            animateDialogue("SHEPARD", "(softly, to himself)", "green", "A cufflink... from the Colonel's collection.");
+            enter();
+            
+            animateText("The realization hits him like a wave.", null, false, true);
+            enter();
+            
+            animateDialogue("SHEPARD", "(looking up sharply)", "green", "We've been looking in the wrong places.");
+            enter();
+            
+            animateText("William, watching from the doorway, looks at Shepard, waiting for him to explain. But Shepard is already moving, determined and certain.", null, false, true);
+            enter();
+            
+            animateDialogue("SHEPARD", "(to William with a laughing face)", "green", "Time's running out. Get ready. This is about to get very interesting.");
+            enter();
+            
+            addHorizontalLine(20);
+
+            pointer++;
+            return;
+        }
+
         if(CRIME_SCENE_COUNT > 1){
             animateText("Shepard has got all the evidence he needed", "black", false, true);
             return;
@@ -197,81 +200,242 @@ public class Chapter1 {
             CRIME_SCENE_COUNT++;
             return;
         }
-        addHorizontalLine(20);
-        animateText("INT. WORTHINGTON'S QUARTERS - "  + dayStrings[pointer], null, false, true);
-        animateText("The camera pans over the luxurious quarters, but the scene is starkly different now. The space is a mess, with items scattered around in disarray. The body of JOSEPH WORTHINGTON, the senior military officer, is found slumped at his desk. His face is pale, eyes wide in shock, and a bloodstained note is beside him. The note reads: 'The truth is always closer than you think.'", null, false, true);
-        enter();
-        
-        animateText("Shepard enters the room with William by his side. Shepard's eyes immediately go to the note, his mind already racing with theories. He approaches the desk carefully, examining the body and the surroundings.", null, false, true);
-        enter();
-        
-        animateDialogue("SHEPARD", "(softly, muttering to himself)", "green", "Interesting.");
-        enter();
-        
-        animateText("William looks at Shepard, both nervous and curious.", null, false, true);
-        enter();
-        
-        animateDialogue("WILLIAM", "(whispering)", "cyan", "What do you think happened here, Shepard?");
-        enter();
-        
-        animateText("Shepard remains silent for a moment, his eyes narrowing. He reaches for the note and examines it.", null, false, true);
-        enter();
-        
-        animateDialogue("SHEPARD", "(flat)", "green", "He didn't die by chance. This is too clean, too… deliberate. Someone wanted him dead. Someone who knows how to cover their tracks.");
-        enter();
-        
-        animateText("William stands still, glancing around the room.", null, false, true);
-        enter();
-        
-        animateDialogue("WILLIAM", "(slightly unnerved)", "cyan", "This doesn't feel like an ordinary murder.");
-        enter();
-        
-        animateText("Shepard doesn't respond immediately. He continues to inspect the room, his mind churning. After a long pause, he turns to William, his voice cold and calculating.", null, false, true);
-        enter();
-        
-        animateDialogue("SHEPARD", "(quietly)", "green", "I don't believe in coincidences. Let's see what the others have to say.");
-        enter();
-        
-        addHorizontalLine(20);
-        CRIME_SCENE_COUNT++;
 
+        
+        if(CRIME_SCENE_COUNT == 10){
+            addHorizontalLine(20);
+            animateText("INT. WORTHINGTON'S QUARTERS - "  + dayStrings[pointer], null, false, true);
+            animateText("The camera pans over the luxurious quarters, but the scene is starkly different now. The space is a mess, with items scattered around in disarray. The body of JOSEPH WORTHINGTON, the senior military officer, is found slumped at his desk. His face is pale, eyes wide in shock, and a bloodstained note is beside him. The note reads: 'The truth is always closer than you think.'", null, false, true);
+            enter();
+            
+            animateText("Shepard enters the room with William by his side. Shepard's eyes immediately go to the note, his mind already racing with theories. He approaches the desk carefully, examining the body and the surroundings.", null, false, true);
+            enter();
+            
+            animateDialogue("SHEPARD", "(softly, muttering to himself)", "green", "Interesting.");
+            enter();
+            
+            animateText("William looks at Shepard, both nervous and curious.", null, false, true);
+            enter();
+            
+            animateDialogue("WILLIAM", "(whispering)", "blue", "What are we dealing with here, Shepard?");
+            enter();
+            
+            animateText("Shepard remains silent. His eyes catch a peculiar marking on the desk—a faint, almost invisible groove etched into the wood. Brushing away some dust, he leans in closer, his sharp instincts kicking in.", null, false, true);
+            enter();
+            
+            addHorizontalLine(20);
+        }
+        
+        animateText("You are going to search for clues. Look around the room carefully."); 
+
+        while (true) {
+            animateText("What do you want to investigate?");
+            animateText("1. The bookshelf\n2. The desk\n3. The painting on the wall");
+            animateText("Choose Your action from above: ", false, "cyan");
+            int user_input = input();
+
+            if (user_input == 1) {
+                if(Inventory.checkInventory("flashlight")){
+                    animateText("You inspect the bookshelf and find a hollowed-out book with a hidden key inside. 🎯");
+                    Inventory.insertTool("key");
+                    animateText("Key added to your inventory! 🔑");
+                }
+                else{
+                    animateText("You can't see anything in the dark. You need a flashlight to inspect the bookshelf.");
+                    animateText("The tool in the office");
+                    animateText("Do you wanna move outside to grab the tool?(enter b to move outside): ", false);
+                    String userString = input("S");
+                    if (userString.equalsIgnoreCase("b")) { 
+                        animateText("You decide to move outside to grab the tool. 🚪");
+                        return; 
+                    } else {
+                        animateText("Invalid input. Staying inside. 🔍");
+                    }
+                }
+            } 
+            else if (user_input == 2) {
+                if (Inventory.checkInventory("multi-tool knife")) {
+                    animateText("Using the multi-tool knife, you pry open a hidden compartment under the desk.");
+                    animateText("Inside, you find a puzzle box with engraved symbols. 🧩");
+                    Inventory.insertTool("puzzle box");
+
+                    animateDialogue("SHEPARD", "(to himself)", "green", "The puzzle box and burned document... they form a pattern.");
+                    enter();
+                    animateText("The burned document, has written \"Between 5\" on it.");
+                    enter();
+
+                    animateText("Guess 4 number to crack the code.");
+                    int count = 0;
+                    Random random = new Random();
+                    while (count < 4) {
+                        animateText("Enter the guess number: ", false);
+                        int guess = random.nextInt(5);
+                        int userInt = input(1);
+                        if(guess == userInt){
+                            count++;
+                        }
+                        else{
+                            animateText("Why not I should try a different number.");
+                        }
+                    }
+                    
+                    animateText("Shepard aligns the symbols on the puzzle box based on the markings from the burned document.");
+                    enter();
+            
+                    animateText("With a faint *click*, the box opens, revealing a cipher key. 🗝️");
+                    enter();
+            
+                    Inventory.insertClue("cipher key");
+                } else {
+                    animateText("The compartment is sealed. You might need a tool to open it. 🔐");
+                    animateText("The tool in the office");
+                    animateText("Do you wanna move outside to grab the tool?(enter b to move outside): ", false);
+                    String userString = input("S");
+                    if(userString.equals("q")){
+                        return;
+                    }
+                }
+            } 
+            else if (user_input == 3) {
+                animateText("You move the painting aside and find a safe embedded in the wall. It needed 2 keys. 🎨🔒");
+                if (Inventory.checkInventory("key")) {
+                    animateText("Using the key, you open the safe. Inside is an encrypted document and a broken military insignia pin. 🕵️‍♂️");
+                    Inventory.insertTool("encrypted document");
+                    animateText("Items added to your inventory! 🗂️");
+                } else {
+                    animateText("You need a key to open the safe. Better keep looking. 🔑");
+                }
+            } 
+            else {
+                animateText("Invalid input. Try again! 🤔");
+
+            }
+
+
+            if (Inventory.checkInventory("cipher key") && Inventory.checkInventory("encrypted note")) {
+                animateText("Shepard started cracking encrypted note using cipher.");
+                
+                animateDialogue("WILLIAM", "(staring in shock)", "blue", "Is that killer mess...?");
+                enter();
+                
+                animateDialogue("SHEPARD", "(nodding)", "green", "Yes. The pieces are falling into place, and the killer's identity won't stay hidden for long.");
+                enter();
+
+                animateText("The mystery deepens as Shepard pockets the pin and deciphers the remaining details from the document. 🔍");
+                enter();
+                
+                animateDialogue("SHEPARD", "(quietly, but with conviction)", "green", "Worthington knew something he wasn't supposed to. And whoever killed him thought they could bury it.");
+                enter();
+                
+                animateText("He looks at William, his tone colder now.", null, false, true);
+                enter();
+                
+                animateDialogue("SHEPARD", "(grimly)", "green", "We're dealing with someone who plays a very dangerous game.");
+                enter();
+                animateText("Shepard gathers all the clue. 🕵️‍♂️");
+                animateText("There was written \"The truth is always closer than you think. Look where the shadows fall, for they hide what the light cannot see.\" on the note. The question is who sent it or where it is from?", "black", true, true);
+                Inventory.insertClue("A note saying :\"The truth is always closer than you think. Look where the shadows fall, for they hide what the light cannot see.\"");
+                enter();
+                break;
+            }
+        }
+
+
+        // animateDialogue("SHEPARD", "(quietly, to himself)", "green", "A hidden mechanism...");
+        // animateText("Shepard inspects the encrypted document and the military insignia, piecing together the mystery. 🕵️‍♂️");
+
+        
+        // animateDialogue("SHEPARD", "(quietly, to himself)", "green", "A hidden mechanism...");
+        // enter();
+        
+        // animateText("Shepard pulls out a small multi-tool knife from his inventory, flipping it open with precision. Carefully, he inserts the blade into the groove, feeling for resistance. A faint *click* echoes through the room, and a concealed compartment springs open on the underside of the desk.", null, false, true);
+        // enter();
+        
+        // animateText("Inside the compartment is a puzzle box, intricately designed with twisting dials and engraved symbols. Shepard pulls it out, his expression sharpening with intrigue.", null, false, true);
+        // enter();
+        
+        // animateDialogue("WILLIAM", "(confused)", "blue", "What the hell is that?");
+        // enter();
+        
+        // animateText("Shepard places the box on the desk and studies it.", null, false, true);
+        // enter();
+        
+        // animateDialogue("SHEPARD", "(smirking slightly)", "green", "A lock. And the note... it's the key.");
+        // enter();
+        
+        // animateText("He holds up the bloodstained note, rereading the words: 'The truth is always closer than you think.'", null, false, true);
+        // enter();
+        
+        // animateDialogue("SHEPARD", "(to himself)", "green", "Closer than you think...");
+        // enter();
+        
+        // animateText("He examines the symbols on the box and notices one matches a faint emblem on the edge of the note. Slowly, he aligns the symbols on the dials to mimic the emblem's arrangement. Another *click* sounds, and the box opens to reveal a small, encrypted document and a broken military insignia pin.", null, false, true);
+        // enter();
+        
+        // animateDialogue("WILLIAM", "(staring at the items)", "blue", "Is that—?");
+        // enter();
+        
+        // animateDialogue("SHEPARD", "(interrupting)", "green", "It's a fragment of the truth. But it's enough to tell us this wasn't random.");
+        // enter();
+        
+        // animateText("He pockets the insignia and studies the document, its contents partially readable.", null, false, true);
+        // enter();
+        
+        CRIME_SCENE_COUNT++;
         pointer++;
     }
 
     public void goToOffice(){
-        if(OFFICE_COUNT >= 1){
-            animateText("I need to crack this mystery in 48 hours.");
+        if(dayStrings[pointer] == "Night"){
+            addHorizontalLine(20);
+            animateText("INT. SHEPARD'S OFFICE - " + dayStrings[pointer], null, false, true);
+            animateText("The clocks ticking. The office is quiet once again, the only sound the ticking of the clock. Shepard is hunched over more papers, his face illuminated by the faint light of an oil lamp. William stands by the window, gazing out into the darkness.", null, false, true);
+            enter();
+            
+            animateText("Shepard's fingers trace the lines of a map on his desk, eyes scanning the details. The door creaks open slowly, and DETECTIVE KINSEY, a stern-looking woman with sharp eyes, enters the room.", null, false, true);
+            enter();
+            
+            animateDialogue("DETECTIVE KINSEY", "(cutting to the point)", "yellow", "Sir, we've interviewed the staff. No one saw anything unusual.");
+            enter();
+            
+            animateDialogue("SHEPARD", "(looking up, still calm)", "green", "No one ever does, kinsey.");
+            enter();
+            
+            animateDialogue("DETECTIVE KINSEY", "(slightly frustrated)", "yellow", "You're not expecting to crack this in one night, are you?");
+            enter();
+            
+            animateDialogue("SHEPARD", "(slowly standing up)", "green", "I don't need a lifetime to solve it. I need the truth.");
+            enter();
+            
+            animateText("kinsey watches him, sensing the quiet intensity in his words. Shepard turns back to the map, fingers still tracing the lines.", null, false, true);
+            enter();
+            
+            animateDialogue("SHEPARD", "(flat)", "green", "We'll find the killer. But I can't do it alone. This case is bigger than just a dead officer. We're dealing with something much darker.");
+            enter();   
+    
+            addHorizontalLine(20);
             return;
         }
 
-        addHorizontalLine(20);
-        animateText("INT. SHEPARD'S OFFICE - " + dayStrings[pointer], null, false, true);
-        animateText("The clock shows it's nearing midnight. The office is quiet once again, the only sound the ticking of the clock. Shepard is hunched over more papers, his face illuminated by the faint light of an oil lamp. William stands by the window, gazing out into the darkness.", null, false, true);
-        enter();
-        
-        animateText("Shepard's fingers trace the lines of a map on his desk, eyes scanning the details. The door creaks open slowly, and DETECTIVE KINSEY, a stern-looking woman with sharp eyes, enters the room.", null, false, true);
-        enter();
-        
-        animateDialogue("DETECTIVE KINSEY", "(cutting to the point)", "yellow", "Sir, we've interviewed the staff. No one saw anything unusual.");
-        enter();
-        
-        animateDialogue("SHEPARD", "(looking up, still calm)", "green", "No one ever does, kinsey.");
-        enter();
-        
-        animateDialogue("DETECTIVE KINSEY", "(slightly frustrated)", "yellow", "You're not expecting to crack this in one night, are you?");
-        enter();
-        
-        animateDialogue("SHEPARD", "(slowly standing up)", "green", "I don't need a lifetime to solve it. I need the truth.");
-        enter();
-        
-        animateText("kinsey watches him, sensing the quiet intensity in his words. Shepard turns back to the map, fingers still tracing the lines.", null, false, true);
-        enter();
-        
-        animateDialogue("SHEPARD", "(flat)", "green", "We'll find the killer. But I can't do it alone. This case is bigger than just a dead officer. We're dealing with something much darker.");
-        enter();   
-
-        addHorizontalLine(20);
-        OFFICE_COUNT++;
-        pointer++;
+        animateText("Your are in the Shepard Office!");
+        while(true){
+            animateText("Select form below:  ", false);
+            animateText("1. Exit the office");
+            animateText("1. Pick up the flash light.");
+            animateText("2. Pick up the multi-tool knife");
+            int userInt = input(1);
+            if(userInt == 0){
+                return;
+            }
+            else if(userInt == 1 && !Inventory.checkInventory("flashlight")){
+                Inventory.insertTool("flashlight");
+            }
+            else if(userInt == 2 && !Inventory.checkInventory("multi-tool knife")){
+                Inventory.insertTool("multi-tool knife");
+            }
+            else{
+                animateText("Invalid choice. Please try again.");
+            }
+        }
     }
 }
