@@ -2,8 +2,6 @@ package src.Engine.Start;
 
 import static src.Helper.TextAnimation.animateText;
 
-import java.util.ArrayList;
-
 import src.Component.CharacterInfo.InfoChar;
 import src.Component.Chp1.Chapter1;
 
@@ -27,7 +25,7 @@ public class OutSet {
             InfoChar infoChar = new InfoChar();
             infoChar.infoChar();
         }
-        // printPreStory();
+        printPreStory();
         Chapter1 chapter1 = new Chapter1();
         chapter1.printChapter1();
     }

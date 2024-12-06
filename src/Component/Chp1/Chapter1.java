@@ -22,7 +22,7 @@ public class Chapter1 {
     String[] dayStrings = {"Morning", "Afternoon", "Evening", "Next Day"};
     int pointer = 0;
     public void printChapter1(){
-        // chapter1Start();
+        chapter1Start();
         animateText("""
         You are given the case to solve, meet and interact with people to get some clue about the killer. Your current objective get the detail of the case.
         You can see the info u get from the people in the case file any time by entering "i" after someone chat.
@@ -229,6 +229,36 @@ public class Chapter1 {
         animateText("You are going to search for clues. Look around the room carefully."); 
 
         while (true) {
+
+            if (Inventory.checkInventory("cipher key") && Inventory.checkInventory("encrypted document")) {
+                animateText("Shepard started cracking encrypted note using cipher.");
+                
+                animateDialogue("WILLIAM", "(staring in shock)", "blue", "Is that killer mess...?");
+                enter();
+                
+                animateDialogue("SHEPARD", "(nodding)", "green", "Yes. The pieces are falling into place, and the killer's identity won't stay hidden for long.");
+                enter();
+
+                animateText("The mystery deepens as Shepard pockets the pin and deciphers the remaining details from the document.");
+                enter();
+                
+                animateDialogue("SHEPARD", "(quietly, but with conviction)", "green", "Worthington knew something he wasn't supposed to. And whoever killed him thought they could bury it.");
+                enter();
+                
+                animateText("He looks at William, his tone colder now.", null, false, true);
+                enter();
+                
+                animateDialogue("SHEPARD", "(grimly)", "green", "We're dealing with someone who plays a very dangerous game.");
+                enter();
+                animateText("Shepard gathers all the clue. ");
+                animateText("There was written \"The truth is always closer than you think. Look where the shadows fall, for they hide what the light cannot see.\" on the note. The question is who sent it or where it is from?", "black", true, true);
+                Inventory.insertClue("A note saying :\"The truth is always closer than you think. Look where the shadows fall, for they hide what the light cannot see.\"");
+                enter();
+
+                CRIME_SCENE_COUNT++;
+                pointer++;
+                return;
+            }
             animateText("What do you want to investigate?");
             animateText("1. The bookshelf\n2. The desk\n3. The painting on the wall");
             animateText("Choose Your action from above: ", false, "cyan");
@@ -236,27 +266,27 @@ public class Chapter1 {
 
             if (user_input == 1) {
                 if(Inventory.checkInventory("flashlight")){
-                    animateText("You inspect the bookshelf and find a hollowed-out book with a hidden key inside. 🎯");
+                    animateText("You inspect the bookshelf and find a hollowed-out book with a hidden key inside.");
                     Inventory.insertTool("key");
-                    animateText("Key added to your inventory! 🔑");
+                    animateText("Key added to your inventory!");
                 }
                 else{
                     animateText("You can't see anything in the dark. You need a flashlight to inspect the bookshelf.");
                     animateText("The tool in the office");
                     animateText("Do you wanna move outside to grab the tool?(enter b to move outside): ", false);
-                    String userString = input("S");
+                    String userString = input("S", true);
                     if (userString.equalsIgnoreCase("b")) { 
-                        animateText("You decide to move outside to grab the tool. 🚪");
+                        animateText("You decide to move outside to grab the tool.");
                         return; 
                     } else {
-                        animateText("Invalid input. Staying inside. 🔍");
+                        animateText("Invalid input. Staying inside.");
                     }
                 }
             } 
             else if (user_input == 2) {
                 if (Inventory.checkInventory("multi-tool knife")) {
                     animateText("Using the multi-tool knife, you pry open a hidden compartment under the desk.");
-                    animateText("Inside, you find a puzzle box with engraved symbols. 🧩");
+                    animateText("Inside, you find a puzzle box with engraved symbols.");
                     Inventory.insertTool("puzzle box");
 
                     animateDialogue("SHEPARD", "(to himself)", "green", "The puzzle box and burned document... they form a pattern.");
@@ -282,61 +312,34 @@ public class Chapter1 {
                     animateText("Shepard aligns the symbols on the puzzle box based on the markings from the burned document.");
                     enter();
             
-                    animateText("With a faint *click*, the box opens, revealing a cipher key. 🗝️");
+                    animateText("With a faint *click*, the box opens, revealing a cipher key.");
                     enter();
             
                     Inventory.insertClue("cipher key");
                 } else {
-                    animateText("The compartment is sealed. You might need a tool to open it. 🔐");
+                    animateText("The compartment is sealed. You might need a tool to open it.");
                     animateText("The tool in the office");
                     animateText("Do you wanna move outside to grab the tool?(enter b to move outside): ", false);
-                    String userString = input("S");
+                    String userString = input("S", true);
                     if(userString.equals("q")){
                         return;
                     }
                 }
             } 
             else if (user_input == 3) {
-                animateText("You move the painting aside and find a safe embedded in the wall. It needed 2 keys. 🎨🔒");
+                animateText("You move the painting aside and find a safe embedded in the wall.");
                 if (Inventory.checkInventory("key")) {
-                    animateText("Using the key, you open the safe. Inside is an encrypted document and a broken military insignia pin. 🕵️‍♂️");
+                    animateText("Using the key, you open the safe. Inside is an encrypted document and a broken military insignia pin.");
                     Inventory.insertTool("encrypted document");
-                    animateText("Items added to your inventory! 🗂️");
+                    animateText("Items added to your inventory!");
                 } else {
-                    animateText("You need a key to open the safe. Better keep looking. 🔑");
+                    animateText("You need a key to open the safe. Better keep looking.");
                 }
             } 
             else {
-                animateText("Invalid input. Try again! 🤔");
+                System.out.println(Inventory.checkInventory("encrypted document"));
+                animateText("Invalid input. Try again!");
 
-            }
-
-
-            if (Inventory.checkInventory("cipher key") && Inventory.checkInventory("encrypted note")) {
-                animateText("Shepard started cracking encrypted note using cipher.");
-                
-                animateDialogue("WILLIAM", "(staring in shock)", "blue", "Is that killer mess...?");
-                enter();
-                
-                animateDialogue("SHEPARD", "(nodding)", "green", "Yes. The pieces are falling into place, and the killer's identity won't stay hidden for long.");
-                enter();
-
-                animateText("The mystery deepens as Shepard pockets the pin and deciphers the remaining details from the document. 🔍");
-                enter();
-                
-                animateDialogue("SHEPARD", "(quietly, but with conviction)", "green", "Worthington knew something he wasn't supposed to. And whoever killed him thought they could bury it.");
-                enter();
-                
-                animateText("He looks at William, his tone colder now.", null, false, true);
-                enter();
-                
-                animateDialogue("SHEPARD", "(grimly)", "green", "We're dealing with someone who plays a very dangerous game.");
-                enter();
-                animateText("Shepard gathers all the clue. 🕵️‍♂️");
-                animateText("There was written \"The truth is always closer than you think. Look where the shadows fall, for they hide what the light cannot see.\" on the note. The question is who sent it or where it is from?", "black", true, true);
-                Inventory.insertClue("A note saying :\"The truth is always closer than you think. Look where the shadows fall, for they hide what the light cannot see.\"");
-                enter();
-                break;
             }
         }
 
@@ -380,9 +383,6 @@ public class Chapter1 {
         
         // animateText("He pockets the insignia and studies the document, its contents partially readable.", null, false, true);
         // enter();
-        
-        CRIME_SCENE_COUNT++;
-        pointer++;
     }
 
     public void goToOffice(){
@@ -419,19 +419,22 @@ public class Chapter1 {
 
         animateText("Your are in the Shepard Office!");
         while(true){
-            animateText("Select form below:  ", false);
-            animateText("1. Exit the office");
+            animateText("Select form below: ", "cyan");
+            animateText("0. Exit the office");
             animateText("1. Pick up the flash light.");
             animateText("2. Pick up the multi-tool knife");
             int userInt = input(1);
             if(userInt == 0){
+                animateText("Going outside");
                 return;
             }
             else if(userInt == 1 && !Inventory.checkInventory("flashlight")){
                 Inventory.insertTool("flashlight");
+                animateText("You picked up the flashlight!");
             }
             else if(userInt == 2 && !Inventory.checkInventory("multi-tool knife")){
                 Inventory.insertTool("multi-tool knife");
+                animateText("You picked up the multi-tool knife!");
             }
             else{
                 animateText("Invalid choice. Please try again.");
