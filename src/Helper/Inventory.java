@@ -16,6 +16,10 @@ public class Inventory {
         }
     }
 
+    public static String[] getTool(){
+        return inventory[0] != null ? inventory[0] : new String[0];
+    }
+
     public static void insertClue(String clue){
         if(clue != null){
             String[] temp = new String[clue.length() + inventory[1].length];
@@ -23,6 +27,10 @@ public class Inventory {
             temp[temp.length - 1] = clue;
             inventory[1] = temp;
         }
+    }
+
+    public static String[] getClue(){
+        return inventory[1] != null ? inventory[1] : new String[0];
     }
 
     public static void removeTool(String tool){

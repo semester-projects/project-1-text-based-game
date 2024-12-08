@@ -1,5 +1,7 @@
 package src.Helper;
 
+import static src.Helper.Pauser.enter;
+
 import java.util.Map;
 
 public class TextAnimation {
@@ -132,6 +134,7 @@ public class TextAnimation {
         if(dialogue != null){
             animateText(dialogue);
         }
+        enter();
     }
 
     public static String getColor(String color){

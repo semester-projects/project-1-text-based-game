@@ -16,6 +16,7 @@ public class Pauser {
                 return;
             }
             if(input == 'q'){
+                GameFileHandler.writeFile();
                 System.exit(0);
             }
             } catch (IOException e) {
