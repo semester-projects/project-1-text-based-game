@@ -1,8 +1,9 @@
 package src.Helper;
 
+
 public class Inventory {
-    public static String[] tool = new String[100];
-    public static String[] clue = new String[100];
+    public static String[] tool = new String[0];
+    public static String[] clue = new String[0];
 
     public static String[][] inventory = {tool, clue};
 
@@ -21,7 +22,7 @@ public class Inventory {
     }
 
     public static void insertClue(String clue){
-        if(clue != null){
+        if(clue != null && clue != "\n"){
             String[] temp = new String[clue.length() + inventory[1].length];
             System.arraycopy(inventory[1], 0, temp, 0, inventory[1].length);
             temp[temp.length - 1] = clue;
@@ -69,24 +70,16 @@ public class Inventory {
             if (t != null) {
                 System.out.print(t + " ");
             }
-            else{
-                System.out.print("None");
-                break;
-            }
         }
-        System.out.println();
+        System.out.println((inventory[0].length == 0  ? "None" : ""));
 
         System.out.print("Clue: ");
         for (String c : inventory[1]) {
             if (c != null) {
                 System.out.print(c + " ");
             }
-            else{
-                System.out.print("None");
-                break;
-            }
         }
-        System.out.println();
+        System.out.println((inventory[1].length == 0  ? "None" : ""));
     }
 
     public static boolean checkInventory(String s){
