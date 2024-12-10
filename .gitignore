@@ -1,5 +1,4 @@
 .vscode
 *.class
 .git
-*.MF
 /bin
