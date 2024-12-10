@@ -1,5 +1,6 @@
 package src;
 
+import static src.Helper.Cleaner.clearScreen;
 import static src.Helper.Input.input;
 import static src.Helper.TextAnimation.animateText;
 
@@ -13,9 +14,10 @@ import src.Helper.GameFileHandler;
 
 public class Main {
     public static void main(String[] args) {
-                String title = "===========================\n"
-                     + "    WELCOME TO THE GAME    \n"
-                     + "===========================";
+        clearScreen();
+        String title = "===========================\n"
+                + "    WELCOME TO THE GAME    \n"
+                + "===========================";
         
         String menu = "\n 1. New Game\n"
                     + " 2. Continue\n"
