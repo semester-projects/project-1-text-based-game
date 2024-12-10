@@ -10,11 +10,11 @@ import static src.Helper.Input.input;
 
 
 public class Chapter3 {
-    int OFFICE = 0;
-    int MILITARY_BASE = 0;
-    int INTERROGATION_ROOM = 0;
+    public static int OFFICE = 0;
+    public static int MILITARY_BASE = 0;
+    public static int INTERROGATION_ROOM = 0;
+    public static int pointer = 0;
 
-    int pointer = 0;
     public void printChapter3(){
         animateText("""
             i = info u have gathered\n
