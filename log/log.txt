@@ -1,4 +1,7 @@
-das
-flashlight,multi-tool knife,key,puzzle box,
-null
+
+,flashlight,multi-tool knife,key,encrypted document,puzzle box,
+cipher key,A note saying :"The truth is always closer than you think. Look where the shadows fall, for they hide what the light cannot see.",
 1
+1
+1
+3

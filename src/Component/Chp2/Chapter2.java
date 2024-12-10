@@ -12,11 +12,11 @@ import static src.Helper.Input.input;
 
 
 public class Chapter2 {
-    int BILLY = 0;
-    int ANNE = 0;
-    int WILLIAM = 0;
+    public static int BILLY = 0;
+    public static int ANNE = 0; 
+    public static int WILLIAM = 0;
 
-    int pointer = 0;
+    public static int pointer = 0;
     
     public void printChapter2(){
         animateText("""

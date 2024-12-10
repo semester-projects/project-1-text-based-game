@@ -11,6 +11,7 @@ import static src.Helper.TextAnimation.animateText;
 
 import java.util.Random;
 
+import src.Component.Chp2.Chapter2;
 import src.Helper.GameFileHandler;
 import src.Helper.Inventory;
 
@@ -21,7 +22,7 @@ public class Chapter1 {
     public static int CRIME_SCENE_COUNT = 0;
 
     String[] dayStrings = {"Morning", "Afternoon", "Evening", "Next Day"};
-    int pointer = 0;
+    public static int pointer = 0;
     public void printChapter1(){
         chapter1Start();
         animateText("""
@@ -61,7 +62,7 @@ public class Chapter1 {
         }
         addLines(3);
         enter("Press Enter for the Next Chapter");
-    }
+}
 
     public void chapter1Start(){
         clearScreen();

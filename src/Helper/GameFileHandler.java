@@ -42,6 +42,23 @@ public class GameFileHandler {
                 }
                 prw.println();
                 prw.print(Chapter);
+                prw.println();
+                if(Chapter == 1){
+                    prw.println(Chapter1.COLONEL_COUNT);
+                    prw.println(Chapter1.CRIME_SCENE_COUNT);
+                    prw.println(Chapter1.pointer);
+                }
+                else if(Chapter == 2){
+                    prw.println(Chapter2.BILLY);
+                    prw.println(Chapter2.ANNE);
+                    prw.println(Chapter2.WILLIAM);
+                    prw.println(Chapter2.pointer);
+                }else if(Chapter == 3){
+                    prw.println(Chapter3.OFFICE);
+                    prw.println(Chapter3.MILITARY_BASE);
+                    prw.println(Chapter3.INTERROGATION_ROOM);
+                    prw.println(Chapter3.pointer);
+                }
             }
         }
         catch(Exception e){
@@ -80,26 +97,43 @@ public class GameFileHandler {
                 }
             }
             Chapter = read.nextInt();
-            read.close();
+            Chapter1 chapter1 = new Chapter1();
+            Chapter2 chapter2 = new Chapter2();
+            Chapter3 chapter3 = new Chapter3();
+            Chapter4 chapter4 = new Chapter4();
             if(Chapter == 1){
-                Chapter1 chapter1 = new Chapter1();
+                Chapter1.COLONEL_COUNT = read.nextInt();
+                Chapter1.CRIME_SCENE_COUNT = read.nextInt();
+                Chapter1.pointer = read.nextInt();
                 chapter1.printChapter1();
+                chapter2.printChapter2();
+                chapter3.printChapter3();
+                chapter4.printChapter4();
             }
             else if(Chapter == 2){
-                Chapter2 chapter2 = new Chapter2();
+                Chapter2.BILLY = read.nextInt();
+                Chapter2.ANNE = read.nextInt();
+                Chapter2.WILLIAM = read.nextInt();
+                Chapter2.pointer = read.nextInt();
                 chapter2.printChapter2();
+                chapter3.printChapter3();
+                chapter4.printChapter4();
             }
             else if(Chapter == 3){
-                Chapter3 chapter3 = new Chapter3();
+                Chapter3.OFFICE = read.nextInt();
+                Chapter3.MILITARY_BASE = read.nextInt();
+                Chapter3.INTERROGATION_ROOM = read.nextInt();
+                Chapter3.pointer = read.nextInt();
                 chapter3.printChapter3();
+                chapter4.printChapter4();
             }
             else if(Chapter == 4){
-                Chapter4 chapter4 = new Chapter4();
                 chapter4.printChapter4();
             }
             else{
                 System.out.println("Invalid Chapter Number");
             }
+            read.close();
         }catch(Exception e){
             e.printStackTrace();
         }
