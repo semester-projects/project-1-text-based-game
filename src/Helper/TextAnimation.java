@@ -1,11 +1,12 @@
 package src.Helper;
 
+import static src.Helper.Line.addLines;
 import static src.Helper.Pauser.enter;
 
 import java.util.Map;
 
 public class TextAnimation {
-    private static final int DEFAULT_DELAY = 5;
+    private static final int DEFAULT_DELAY = 10;
     private static final String RESET_COLOR = "\033[0m";
     private static final String BOLD_COLOR = "\033[1m";
     private static final String ITALIC_STRING = "\u001B[3m";
@@ -18,8 +19,7 @@ public class TextAnimation {
             "cyan", "\033[96m",
             "white", "\033[97m",
             "black", "\033[90m",
-            "gray", "\033[90m"
-    );
+            "gray", "\033[90m");
 
     public static void animateText(String text) {
 
@@ -32,7 +32,7 @@ public class TextAnimation {
                 System.err.println("Animation interrupted: " + e.getMessage());
             }
         }
-        System.out.println();
+        addLines(1);
     }
 
     public static void animateText(String text, String color) {
@@ -59,7 +59,7 @@ public class TextAnimation {
                 System.err.println("Animation interrupted: " + e.getMessage());
             }
         }
-        if(newLine){
+        if (newLine) {
             System.out.println();
         }
     }
@@ -75,7 +75,7 @@ public class TextAnimation {
                 System.err.println("Animation interrupted: " + e.getMessage());
             }
         }
-        if(newLine){
+        if (newLine) {
             System.out.println();
         }
     }
@@ -107,7 +107,7 @@ public class TextAnimation {
         }
         System.out.println();
     }
-    
+
     public static void animateText(String text, String color, Boolean itBoolean, Boolean bldBoolean) {
 
         for (int i = 0; i < text.length(); i++) {
@@ -122,22 +122,38 @@ public class TextAnimation {
         System.out.println();
     }
 
+    public static void animateText(String text, String color, Boolean itBoolean, Boolean bldBoolean, Boolean enter) {
+        addLines(1);
+        for (int i = 0; i < text.length(); i++) {
+            System.out.print(ITALIC_STRING + BOLD_COLOR + getColor(color) + text.charAt(i) + RESET_COLOR);
+            try {
+                Thread.sleep(DEFAULT_DELAY);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                System.err.println("Animation interrupted: " + e.getMessage());
+            }
+        }
+        enter();
+        System.out.println();
+    }
 
-    public static void animateDialogue(String CharName, String state, String color, String dialogue){
-        if(state != null){
+    public static void animateDialogue(String CharName, String state, String color, String dialogue) {
+        addLines(1);
+        if (state != null) {
             animateText(CharName, color, false, true);
             animateText(state + ": ", color);
-        }else{
+        } else {
             animateText(CharName + " : ", color, false, true);
         }
 
-        if(dialogue != null){
+        if (dialogue != null) {
             animateText(dialogue);
         }
+        addLines(1);
         enter();
     }
 
-    public static String getColor(String color){
+    public static String getColor(String color) {
         if (color == null || color.isEmpty()) {
             return RESET_COLOR;
         }

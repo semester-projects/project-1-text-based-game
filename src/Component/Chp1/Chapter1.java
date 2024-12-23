@@ -11,7 +11,6 @@ import static src.Helper.TextAnimation.animateText;
 
 import java.util.Random;
 
-import src.Component.Chp2.Chapter2;
 import src.Helper.GameFileHandler;
 import src.Helper.Inventory;
 
@@ -306,8 +305,11 @@ public class Chapter1 {
                         int userInt = input(1);
                         if(guess == userInt){
                             count++;
+                            animateText("Correct guess!", "magenta");
+                            addLines(userInt);
                         }
                         else{
+                            addLines(1);
                             animateText("Why not I should try a different number.");
                         }
                     }

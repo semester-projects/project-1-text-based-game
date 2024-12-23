@@ -2,6 +2,7 @@ package src.Component.Chp2;
 
 import static src.Helper.Cleaner.clearScreen;
 import static src.Helper.Line.addLines;
+import static src.Helper.Line.addHorizontalLine;
 import static src.Helper.Pauser.enter;
 import static src.Helper.TextAnimation.animateDialogue;
 import static src.Helper.TextAnimation.animateText;
@@ -23,6 +24,7 @@ public class Chapter2 {
         i = info u have gathered\n
         q = quit
         """, "black", false, true);
+        enter();
         chapter2Start();
 
         chapter2DecisionEngine();
@@ -106,7 +108,7 @@ public class Chapter2 {
             animateText("I have already interrogate Billy.");
         }
         if(BILLY == 0){
-            addLines(20);
+            addHorizontalLine(20);
             animateText("INT. MILITARY BASE - LATER THAT DAY", null, false, true);
            
             
@@ -124,13 +126,13 @@ public class Chapter2 {
             
             animateText("Billy nods, looking more nervous by the second. He's clearly hiding something, though Shepard isn't sure what yet.", null, false, true);
             
-            addLines(20);
+            addHorizontalLine(20);
             BILLY++; 
             pointer++;
             return;      
         }
         if(BILLY == 1){
-            addLines(20);
+            addHorizontalLine(20);
             animateText("INT. INTERROGATION ROOM - MOMENTS LATER", null, false, true);
            
             
@@ -167,7 +169,7 @@ public class Chapter2 {
             animateText("Billy shifts uncomfortably in his chair but remains silent. Shepard doesn't press him further. He stands and motions for William to follow.", null, false, true);
            
 
-            addLines(20);
+            addHorizontalLine(20);
             BILLY++;
             pointer++;
             return;
@@ -185,7 +187,7 @@ public class Chapter2 {
             ANNE++;
             return;
         }
-        addLines(20);
+        addHorizontalLine(20);
         animateText("INT. WORTHINGTON'S QUARTERS - CONTINUOUS", null, false, true);
        
         
@@ -228,7 +230,7 @@ public class Chapter2 {
         animateText("Shepard doesn't press her further but makes a mental note of her reaction. Something about Anne feels off, but it's still unclear what exactly she's hiding.", null, false, true);
           
         
-        addLines(20);
+        addHorizontalLine(20);
         pointer++;
         ANNE++;
     }
@@ -239,7 +241,7 @@ public class Chapter2 {
             return;
         }
 
-        addLines(20);
+        addHorizontalLine(20);
         animateText("INT. WORTHINGTON'S QUARTERS - LATER THAT NIGHT", null, false, true);
        
         
@@ -270,14 +272,14 @@ public class Chapter2 {
         animateText("Shepard studies him for a moment, then nods slowly. He trusts William, but trust has never been a good reason to rule someone out.", null, false, true);
        
         
-        addLines(20);
+        addHorizontalLine(20);
         pointer++;
         WILLIAM++;
     }
 
     public void goToOffice(){
 
-        addLines(20);
+        addHorizontalLine(20);
         animateText("INT. SHEPARD'S OFFICE - NIGHT", "black", false, true);
        
         
@@ -298,6 +300,6 @@ public class Chapter2 {
         
         animateText("And Shepard knows that in the end, the truth will always come out. But who will survive to see it?", null, false, true);
        
-        addLines(20);
+        addHorizontalLine(20);
     }
 }
