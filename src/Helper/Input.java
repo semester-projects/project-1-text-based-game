@@ -1,5 +1,6 @@
 package src.Helper;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
@@ -18,7 +19,13 @@ public class Input {
     }
 
     public static int input(int n) {
-        return scanner.nextInt();
+        try{
+            return scanner.nextInt();
+        }catch(InputMismatchException ime){
+            System.out.println("Invalid input. Please enter a number.");
+            scanner.next();
+            return input(n);
+        }
     }
 
     public static int input(){

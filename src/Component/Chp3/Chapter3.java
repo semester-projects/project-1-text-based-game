@@ -6,6 +6,9 @@ import static src.Helper.Line.addLines;
 import static src.Helper.Pauser.enter;
 import static src.Helper.TextAnimation.animateDialogue;
 import static src.Helper.TextAnimation.animateText;
+
+import src.Helper.GameFileHandler;
+
 import static src.Helper.Input.input;
 
 
@@ -20,9 +23,11 @@ public class Chapter3 {
             i = info u have gathered\n
             q = quit
             """, "black", false, true);
+        enter();
         chapter3Start();
         chapter3DecisionEngine();
         enter("Press Enter to continue to the next chapter");
+        GameFileHandler.Chapter++;
     }
 
     public void chapter3DecisionEngine(){

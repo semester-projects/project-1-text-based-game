@@ -21,12 +21,11 @@ public class Main {
         
         String menu = "\n 1. New Game\n"
                     + " 2. Continue\n"
-                    + "===========================\n"
-                    + "Choose your option (1 or 2):";
+                    + "===========================\n";
 
         animateText(title, "red", true, true);
         animateText(menu, "red", true, true);
-        
+        animateText("Choose your option (1 or 2): ", false, "red");
 
         int choice = input(1);
 
